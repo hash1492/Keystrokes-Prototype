@@ -1,27 +1,28 @@
 $(document).keydown(function (e) {
 
-
+//Single key press
 if(e.keyCode)
 {
-
-	e.preventDefault();
-	$("#pid1").text(String.fromCharCode(e.keyCode));
-
+e.preventDefault();
+$("#pid1").text(String.fromCharCode(e.keyCode));
 }
 
-
-if(e.ctrlKey && e.keyCode) { 
+//Ctrl + Shift + Key press
+if(e.ctrlKey && e.shiftKey && e.keyCode) { 
 e.preventDefault();
-//alert("ctrl + " +String.fromCharCode(e.keyCode));
+$("#pid1").text("ctrl + shift + " +String.fromCharCode(e.keyCode));
+}
+
+//Ctrl+ key press
+if(e.ctrlKey && e.keyCode && !e.shiftKey) { 
+e.preventDefault();
 $("#pid1").text("ctrl + " +String.fromCharCode(e.keyCode));
- }
+}
 
-
-
-if(e.shiftKey && e.keyCode) { 
+//Shift + key press
+if(e.shiftKey && e.keyCode && !e.ctrlKey) { 
 e.preventDefault();
-//alert("ctrl + " +String.fromCharCode(e.keyCode));
-$("#pid1").text("Shift + " +String.fromCharCode(e.keyCode));
+$("#pid1").text("shift + " +String.fromCharCode(e.keyCode));
  }
 
 if(e.keyCode==32)
