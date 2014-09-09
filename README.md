@@ -3,6 +3,12 @@ Keystrokes-Prototype
 
 This repo contains a project which detects the keystrokes in the browser
 
+Prerequisites:
+
+* You need to install the http-server module globally for this project to work
+* To install it, open the terminal and type ```npm install http-server -g```
+* It is installed. Now you can follow the steps below
+
 Steps to run the project:
 
 1. Clone the repo on the local machine
