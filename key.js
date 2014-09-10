@@ -10,24 +10,20 @@ $(document).keydown(function (e) {
 		if(e.keyCode) {
 			console.log(abc);
 			$("#pid1").text(result.key[abc]);
-		
 		}
 
 		//Ctrl + Shift + Key press
 		if(e.ctrlKey && e.shiftKey && e.keyCode) { 
-
 			$("#pid1").text("ctrl + shift + " +result.key[abc]);
 		}
 
 		//Ctrl+ key press
 		if(e.ctrlKey && e.keyCode && !e.shiftKey) { 
-
 			$("#pid1").text("ctrl + " +result.key[abc]);
 		}
 
 		//Shift + key press
 		if(e.shiftKey && e.keyCode && !e.ctrlKey) { 
-
 			$("#pid1").text("shift + " +result.key[abc]);
 		}
 
@@ -35,11 +31,9 @@ $(document).keydown(function (e) {
 			$("#pid1").text("Space");
 		}
 
-
 		if(e.keyCode==27) {
 			$("#pid1").text("Escape");
 		}
-
 
 		if(e.keyCode==8) {
 			$("#pid1").text("Backspace");
