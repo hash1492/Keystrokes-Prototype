@@ -1,6 +1,6 @@
 $(document).keydown(function (e) {
 
-e.preventDefault();
+	e.preventDefault();
 
 	$.getJSON( 'keyconfig.json' , function( result ){
 
@@ -9,6 +9,7 @@ e.preventDefault();
 		//Single key press
 		if(e.keyCode)
 		{
+			console.log(abc);
 			$("#pid1").text(result.key[abc]);
 		
 		}
@@ -29,7 +30,7 @@ e.preventDefault();
 		if(e.shiftKey && e.keyCode && !e.ctrlKey) { 
 
 			$("#pid1").text("shift + " +result.key[abc]);
-		 }
+		}
 
 		if(e.keyCode==32)
 		{
