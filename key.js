@@ -9,22 +9,38 @@ $(document).keydown(function (e) {
 		//Single key press
 		if(e.keyCode) {
 			console.log(abc);
+			console.log(e.keyCode);
 			$("#pid1").text(result.key[abc]);
 		}
 
-		//Ctrl + Shift + Key press
-		if(e.ctrlKey && e.shiftKey && e.keyCode) { 
-			$("#pid1").text("ctrl + shift + " +result.key[abc]);
+		//Only Ctrl is pressed
+		if(e.ctrlKey && !e.shiftKey && e.keyCode==17) {
+			$("#pid1").text("ctrl");
+		}
+
+		//Only Shift is pressed
+		if(e.shiftKey && !e.ctrlKey && e.keyCode==16) {
+			$("#pid1").text("shift");
 		}
 
 		//Ctrl+ key press
-		if(e.ctrlKey && e.keyCode && !e.shiftKey) { 
+		if(e.ctrlKey && ((e.keyCode>=8 && e.keyCode<=16) || (e.keyCode>=18 && e.keyCode<=222)) && !e.shiftKey) { 
 			$("#pid1").text("ctrl + " +result.key[abc]);
 		}
 
 		//Shift + key press
-		if(e.shiftKey && e.keyCode && !e.ctrlKey) { 
+		if(e.shiftKey && ((e.keyCode>=8 && e.keyCode<=15) || (e.keyCode>=17 && e.keyCode<=222)) && !e.ctrlKey) { 
 			$("#pid1").text("shift + " +result.key[abc]);
+		}
+
+		//Ctrl + Shift press
+		if(e.ctrlKey && e.shiftKey && (e.keyCode==16 || e.keyCode==17)) { 
+			$("#pid1").text("ctrl + shift ");
+		}
+
+		//Ctrl + Shift + Key press
+		if(e.ctrlKey && e.shiftKey && ((e.keyCode>=8 && e.keyCode<=15) || (e.keyCode>=18 && e.keyCode<=222)) ) { 
+			$("#pid1").text("ctrl + shift + " +result.key[abc]);
 		}
 
 		if(e.keyCode==32) {
