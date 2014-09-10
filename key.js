@@ -4,11 +4,11 @@ $(document).keydown(function (e) {
 
 	$.getJSON( 'keyconfig.json' , function( result ){
 
-		var abc=String.fromCharCode(e.keyCode);
+		var keyCharacter=String.fromCharCode(e.keyCode);
 
 		//Single key press
 		if(e.keyCode) {
-			$("#pid1").text(result.key[abc]);
+			$("#pid1").text(result.key[keyCharacter]);
 		}
 
 		//Only Ctrl is pressed
@@ -23,12 +23,12 @@ $(document).keydown(function (e) {
 
 		//Ctrl+ key press
 		if(e.ctrlKey && ((e.keyCode>=8 && e.keyCode<=16) || (e.keyCode>=18 && e.keyCode<=222)) && !e.shiftKey) { 
-			$("#pid1").text("ctrl + " +result.key[abc]);
+			$("#pid1").text("ctrl + " +result.key[keyCharacter]);
 		}
 
 		//Shift + key press
 		if(e.shiftKey && ((e.keyCode>=8 && e.keyCode<=15) || (e.keyCode>=17 && e.keyCode<=222)) && !e.ctrlKey) { 
-			$("#pid1").text("shift + " +result.key[abc]);
+			$("#pid1").text("shift + " +result.key[keyCharacter]);
 		}
 
 		//Ctrl + Shift press
@@ -38,7 +38,7 @@ $(document).keydown(function (e) {
 
 		//Ctrl + Shift + Key press
 		if(e.ctrlKey && e.shiftKey && ((e.keyCode>=8 && e.keyCode<=15) || (e.keyCode>=18 && e.keyCode<=222)) ) { 
-			$("#pid1").text("ctrl + shift + " +result.key[abc]);
+			$("#pid1").text("ctrl + shift + " +result.key[keyCharacter]);
 		}
 
 		if(e.keyCode==32) {
