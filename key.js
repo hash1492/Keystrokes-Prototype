@@ -8,8 +8,6 @@ $(document).keydown(function (e) {
 
 		//Single key press
 		if(e.keyCode) {
-			console.log(abc);
-			console.log(e.keyCode);
 			$("#pid1").text(result.key[abc]);
 		}
 
